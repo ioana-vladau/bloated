@@ -1,0 +1,19 @@
+.all-caps {
+    text-transform: uppercase;
+}
+.all-good {
+    text-wrangler: true;
+}
+::-webkit-input-placeholder {
+    color: gray;
+}
+:-ms-input-placeholder {
+    color: gray;
+}
+::-ms-input-placeholder {
+    color: gray;
+}
+::placeholder {
+    color: gray;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NvdXJjZS9jc3MvdGV4dC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSwwQkFBMEI7Q0FDN0I7QUFDRDtJQUNJLG9CQUFvQjtDQUN2QjtBQUNEO0lBQ0ksWUFBWTtDQUNmO0FBRkQ7SUFDSSxZQUFZO0NBQ2Y7QUFGRDtJQUNJLFlBQVk7Q0FDZjtBQUZEO0lBQ0ksWUFBWTtDQUNmIiwiZmlsZSI6InRleHQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFsbC1jYXBzIHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbn1cclxuLmFsbC1nb29kIHtcclxuICAgIHRleHQtd3JhbmdsZXI6IHRydWU7XHJcbn1cclxuOjpwbGFjZWhvbGRlciB7XHJcbiAgICBjb2xvcjogZ3JheTtcclxufSJdfQ== */

@@ -1,0 +1,52 @@
+{
+  "name": "bloated",
+  "version": "1.0.0",
+  "description": "Fork this repo, then clone it to your computer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass source/css/style.scss build/css/style.css",
+    "concat-css": "cat source/css/*.css build/css/style.css > build/css/all.css",
+    "critical-html": "cat build/index.html | critical --base build --inline > index.critical.html",
+    "critical-css": "cat build/index.html | critical --base build > critical.css",
+    "purify-css": "purifycss build/css/all.css build/js/transpiled.js build/js/uglified.js --min --info --out build/css/index.css",
+    "autoprefix": "postcss build/css/*.css --use autoprefixer -d build/css/",
+    "minifycss": "postcss build/css/*.css --use cssnano -d build/css/",
+    "allcss": "npm run sass && npm run autoprefix && npm run critical-css && npm run concat-css",
+    "transpile": "babel source/js/*.js --out-file build/js/transpiled.js --presets=env",
+    "uglify": "uglifyjs build/js/*.js --compress --mangle --output build/js/uglified.js",
+    "alljs": "npm run transpile && npm run uglify",
+    "minify-svg": "imagemin source/images/svg/* --plugin=svgo --out-dir=build/images/svg/",
+    "minify-jpg": "imagemin source/images/bitmap/*.jpg --out-dir=build/images/bitmap/",
+    "all-images-minify": "npm run minify-svg && npm run minify-jpg",
+    "all-css-js-images": "npm run allcss && npm run alljs && npm run all-images-minify",
+    "all": "npm run allcss && npm run alljs && npm run all-images-minify",
+    "watch": "watch \"npm run allcss\" source/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioana-vladau/bloated.git"
+  },
+  "author": "Ioana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioana-vladau/bloated/issues"
+  },
+  "homepage": "https://github.com/ioana-vladau/bloated#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "critical": "^1.3.2",
+    "cssnano": "^3.10.0",
+    "imagemin": "^5.3.1",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin-svgo": "^6.0.0",
+    "node-sass": "^4.9.0",
+    "postcss-cli": "^5.0.0",
+    "purify-css": "^1.2.5",
+    "uglify-js": "^3.3.25",
+    "watch": "^1.0.2"
+  }
+}
